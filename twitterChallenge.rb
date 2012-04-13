@@ -18,14 +18,9 @@ class TwitterChallenge
 
 #This method finds the urls from the tweets which are passed as arguments
   def self.find_urls_from_tweets(tweets=[])
-    begin 
      urls =[]
-     urls << tweets.map{|tweet|  URI.extract(tweet.text,'http') }
-     urls.flatten!.uniq!
-    rescue 
-      puts "Something went wrong while extracting urls from tweets" 
-      exit
-    end 
+     urls = tweets.map{|tweet|  URI.extract(tweet.text,'http') }
+     urls.flatten.uniq
   end
 
 
