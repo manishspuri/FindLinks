@@ -8,7 +8,7 @@ class TwitterChallenge
      tags = hashtags.collect{|tag| "##{tag}"}
      client = TwitterSearch::Client.new
    
-      tags.length > 0 ?   client.query(:q => "##{tags}", :rpp => '100'): []
+      tags.length > 0 ?   client.query(:q => "##{tags}", :rpp => no_of_tweets): []
 
    rescue
      puts "Something went wrong while fetching tweets" 
