@@ -1,10 +1,14 @@
 = Find Link
 
-Find Link is used to fetch all the unique http links in the last 100 most recent tweets using the supplied hashtag.
+Find Link is used to fetch all the unique http links in the last 100(default, can be changed) most recent tweets using the supplied hashtag.
 
 How to use:
 
+Download the application and run bundle to install the dependencies.
+
+
 You can run the script by passing it a hash tag e.g.
+
 $ ruby find_links.rb aHashtag
 
 OR multiple Hashtags e.g.
