@@ -1,4 +1,5 @@
-require File.join(File.dirname(__FILE__), 'twitter-search/lib/twitter_search')
+require 'rubygems'
+require 'twitter_search'
 
 class TwitterSearchExtension < TwitterSearch::Client
  
