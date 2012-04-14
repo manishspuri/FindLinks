@@ -1,19 +1,11 @@
-require 'twitterChallenge'
+require 'twitter_search_extension'
 
-  begin
-	if ARGV && !ARGV.empty?
-	    tweets=TwitterChallenge.get_tweets_for_hashtags(ARGV) #find tweets
-            urls= TwitterChallenge.find_urls_from_tweets(tweets) || []     #find urls 
-            puts "URLs with hashtag(s)=> #{ARGV.join(', ')} :" 
-            urls.empty? ? puts("No URL found") : urls.each_with_index {|url,i|   puts (i+1).to_s + '. '  + url}   
-      else
-            puts "Please supply atleast one hashtag"
-	end
-  rescue
-    puts 'Something went wrong'
-    exit
-  end
-  
+  client=TwitterSearchExtension.new
+  urls= client.get_urls_for_hashtags(ARGV)
+
+  puts "URLs with hashtag(s)=> #{ARGV.join(', ')} :" 
+  urls.empty? ? puts("No URL found") : urls.each_with_index {|url,i|   puts (i+1).to_s + '. '  + url}   
+
 
 
 
